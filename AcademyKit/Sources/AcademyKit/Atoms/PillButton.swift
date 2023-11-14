@@ -8,7 +8,12 @@
 import Foundation
 import SwiftUI
 
-
+/// Variações do Pill Button
+///
+/// -   Parameters:
+///     - primary: Botões de cor azul
+///     - secundary: Botões de cor roxa
+///     - tertiary: Botões de cores cinza e preto
 public enum PillButtonEnum {
     case primary
     case secondary
@@ -22,7 +27,14 @@ public enum PillButtonEnum {
 ///      - isFilled: Altera o preenchimento do botão, tipo booleana, opcional
 ///      - isPicker: Adiciona o chevron para definir o picker, tipo booleana, opcional
 ///
-/// Utilize o PillButtonStyle como um Button Style e
+/// Utilize o PillButtonStyle como um Button Style e coloque os parâmetros desejados para alterar a aparência do botão:
+/// ```swift
+/// Button("Toque aqui"){
+///   print("botão")
+///}
+///     .buttonStyle(PillButtonStyle(type: .secondary, isFilled: true, isPicker: true))
+/// ```
+
  public struct PillButtonStyle: ButtonStyle {
     
     @Environment(\.colorScheme) var colorScheme
@@ -42,11 +54,6 @@ public enum PillButtonEnum {
     
     
      
-     
-     
-     /// <#Description#>
-     /// - Parameter configuration: <#configuration description#>
-     /// - Returns: <#description#>
     public func makeBody(configuration: Configuration) -> some View {
   
             if isFilled == true{
