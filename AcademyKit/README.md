@@ -1,6 +1,6 @@
-#Academy Kit
+# Academy Kit
 
-##Fontes
+## Fontes
 
 Para utilizar as fontes, o comando realizado deve ser:
 ```swift
@@ -22,7 +22,7 @@ Nomes das fontes para adicionar no código:
 - Cygre-Thin 
 - Cygre-ThinIt
 
-##Cores
+## Cores
 
 Para utilizar as cores, o comando realizado deve ser:
 ```swift
