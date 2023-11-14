@@ -1,6 +1,3 @@
-
-
-
 //
 //  SwiftUIView.swift
 //
@@ -34,6 +31,7 @@ public struct RatingView: View {
                     }
             }
         }
+        .accessibilityLabel("\(rating!) de 5 estrelas")
     }
 }
 
