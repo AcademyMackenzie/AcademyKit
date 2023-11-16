@@ -14,7 +14,7 @@ import SwiftUI
 /// 	- sheetIsPresented: Dita se a View está sendo apresentada
 /// 	- title: Título apresentado na View
 /// 	- view: Conteúdo apresentado na View
-struct SheetView<Content: View>: View {
+public struct SheetView<Content: View>: View {
 	
 	/// Dita se a View está sendo apresentada
 	@Binding var sheetIsPresented: Bool
@@ -29,13 +29,13 @@ struct SheetView<Content: View>: View {
 	///   - sheetIsPresented: Dita se a View está sendo apresentada
 	///   - title: Título apresentado na View
 	///   - _ view: Conteúdo apresentado na View
-	init(sheetIsPresented: Binding<Bool>, title: String, @ViewBuilder _ view: () -> Content) {
+	public init(sheetIsPresented: Binding<Bool>, title: String, @ViewBuilder _ view: () -> Content) {
 		self._sheetIsPresented = sheetIsPresented
 		self.title = title
 		self.view = view()
 	}
 	
-	var body: some View {
+	public var body: some View {
 		NavigationStack {
 			
 		}

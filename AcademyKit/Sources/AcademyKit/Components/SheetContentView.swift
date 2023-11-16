@@ -11,7 +11,7 @@ import SwiftUI
 /// - Parameters:
 /// 	- title: Título apresentado na ``SheetView``.
 /// 	- insideView: Conteúdo apresentado na ``SheetView``.
-struct SheetContentView <Content: View>: View {
+public struct SheetContentView <Content: View>: View {
 	
 	@Environment(\.dismiss) private var dismiss
 	/// Título apresentado na ``SheetView``.
@@ -23,12 +23,12 @@ struct SheetContentView <Content: View>: View {
 	/// - Parameters:
 	///   - title: Título aprensetado na ``SheetView``.
 	///   - _: Conteúdo apresentado na ``SheetView``.
-	init(title: String, @ViewBuilder _ insideView: () -> Content) {
+	public init(title: String, @ViewBuilder _ insideView: () -> Content) {
 		self.title = title
 		self.insideView = insideView()
 	}
 	
-	var body: some View {
+	public var body: some View {
 		NavigationStack {
 			VStack {
 				HStack {
