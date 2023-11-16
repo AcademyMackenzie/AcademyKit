@@ -16,17 +16,18 @@ public enum Weight{
     case regularWeight
 }
 
-///View que mostra um texto de título grande
+///View que mostra um texto de título grande do nosso pacote
 public struct LargeTitleView: View {
     
+    /// Variável que recebe o texto que deseja mostrar como parâmetro
     public var text: String
-    
+    /// Variável que recebe o texto que deseja mostrar como parâmetro
     public var weight: Weight
     
     /// Inicializador da View
     /// - Parameters:
     ///   - text: Variável que recebe o texto que deseja mostrar como parâmetro
-    ///   - weight: Variável que recebe o peso que deseja mostrar como parâmetro
+    ///   - weight: Variável que recebe o texto que deseja mostrar como parâmetro
     public init(text: String, weight: Weight){
         self.text = text
         self.weight = weight
