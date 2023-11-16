@@ -41,9 +41,9 @@ public struct RatingView: View {
                     .gesture(
                         DragGesture(minimumDistance: 0)
                             .onChanged { value in
-                                let starWidth = UIScreen.main.bounds.width / 10
-                                let rating = min(max(1, (value.location.x + starWidth / 2) / starWidth), 5)
-                                self.rating = Int(rating)
+                                    let starWidth = UIScreen.main.bounds.width / 10
+                                    let rating = min(max(1, (value.location.x + starWidth / 2) / starWidth), 5)
+                                    self.rating = Int(rating)
                             }
                     )
             }
