@@ -6,20 +6,33 @@
 //
 import SwiftUI
 
+
+/// Enum que classifica o peso do título, se será regular ou negrito
+/// - Casos:
+///   - boldWeight: Peso em negrito do texto
+///   - regularWeight: Peso regular do texto
 public enum Weight{
     case boldWeight
     case regularWeight
 }
 
+///View que mostra um texto de título grande
 public struct LargeTitleView: View {
-    var text: String
-    var weight: Weight
     
+    public var text: String
+    
+    public var weight: Weight
+    
+    /// Inicializador da View
+    /// - Parameters:
+    ///   - text: Variável que recebe o texto que deseja mostrar como parâmetro
+    ///   - weight: Variável que recebe o peso que deseja mostrar como parâmetro
     public init(text: String, weight: Weight){
         self.text = text
         self.weight = weight
     }
     
+    ///  Corpo da View
     public var body: some View {
         Text(text)
             .font(.custom(weight == .regularWeight ? "Cygre-Regular" : "Cygre-Bold", size: 34))
