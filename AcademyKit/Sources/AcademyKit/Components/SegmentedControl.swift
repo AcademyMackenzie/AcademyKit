@@ -17,6 +17,9 @@ struct SegmentedControl: View {
     let segmentLabels: [String]
     
     
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
+    
     var body: some View {
         ZStack(alignment: .leading) {
             
@@ -38,7 +41,7 @@ struct SegmentedControl: View {
             //            Labels
             HStack(spacing: 0) {
                 ForEach(0..<segmentLabels.count) { index in
-                    SegmentLabel(title: segmentLabels[index], width: segmentWidth(size), textColour: selection == index ? Color.academyBlack : Color.academyBlack, isSelected: $selected)
+                    SegmentLabel(title: segmentLabels[index], width: segmentWidth(size), textColour: colorScheme == .light ? Color.academyBlack : Color.academyWhite, isSelected: $selected)
                     // dar um update no selection com o id do segmento da label
                         .onTapGesture {
                             selection = index

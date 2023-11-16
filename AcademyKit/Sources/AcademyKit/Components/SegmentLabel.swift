@@ -26,7 +26,8 @@ struct SegmentLabel: View {
                 .foregroundColor(textColour)
                 .frame(width: width)
                 .contentShape(Rectangle())
-                .fontWeight(isSelected == title ? .bold : .regular)
+                .font(.custom(isSelected == title ? "Cygre-Regular" : "Cygre-Bold", size: 13))
+                .accessibilityLabel("opção" + title + "selecionado.")
         }
         
     }
