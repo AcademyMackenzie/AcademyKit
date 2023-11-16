@@ -11,6 +11,8 @@ public struct SwiftUIView: View {
     public init(){}
     public var body: some View {
         Text("Seu componente aqui!")
+        
+        
     }
 }
 
