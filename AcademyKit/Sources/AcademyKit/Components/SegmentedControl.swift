@@ -9,55 +9,71 @@ import SwiftUI
 
 struct SegmentedControl: View {
     
-    
     @Binding public var selection: Int
-    
+    public var isSelected: String
+    @State var selected: String = ""
     // Para calcular o tamanho do Picker
     let size: CGSize
     let segmentLabels: [String]
     
     
     var body: some View {
-        
         ZStack(alignment: .leading) {
             
-            //BackGround do SegmentedControl
+            //            BackGround do SegmentedControl
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: size.width, height: size.height)
-                .foregroundColor(Color.academyBeige)
+                .foregroundColor(.gray)
                 .opacity(0.2)
+//                .padding(.horizontal)
+            
             
             //            BackGround da Label selecionada
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: segmentWidth(size), height: size.height - 6)
-                .foregroundColor(Color("academyBlue"))
+                .foregroundColor(.academyBlue)
                 .offset(x: calculateSegmentOffset(size))
                 .animation(Animation.easeInOut(duration: 0.2))
             
-            //Labels
+            //            Labels
             HStack(spacing: 0) {
                 ForEach(0..<segmentLabels.count) { index in
-                    SegmentLabel(title: segmentLabels[index], width: segmentWidth(size), textColour: Color.academyBlack)
+                    SegmentLabel(title: segmentLabels[index], width: segmentWidth(size), textColour: selection == index ? Color.academyBlack : Color.academyBlack, isSelected: $selected)
                     // dar um update no selection com o id do segmento da label
                         .onTapGesture {
                             selection = index
                             print("\(index)")
+                            selected = segmentLabels[index]
+                            
                         }
-                            }
+
+                }
+            }
+        }.onAppear() {
+            selected = isSelected
+
+            for number in segmentLabels.indices {
                 
-                        }
+                if segmentLabels[number] == selected {
+                    selection = number
+                    break
+                }
+            }
+            
         }
+        
     }
     
     
-    public init(size: CGSize, segmentLabels: [String], selection: Binding <Int>) {
+    public init(selection: Binding <Int>, size: CGSize, segmentLabels: [String], isSelected: String) {
+        self._selection = selection
         self.size = size
         self.segmentLabels = segmentLabels
-        self._selection = selection
+        self.isSelected = isSelected
     }
     
-//    Segmenta a width pela quantidade de Labels adicionadas
-    public func segmentWidth(_ mainSize: CGSize) -> CGFloat {
+    //Segmenta a width para o tamanho da Label selecionada de acordo com sua quantidade
+    func segmentWidth(_ mainSize: CGSize) -> CGFloat {
         var width = (mainSize.width / CGFloat(segmentLabels.count))
         if width < 0 {
             width = 0
@@ -66,12 +82,13 @@ struct SegmentedControl: View {
     }
     
     // Transporte da Label selecionada para a outra
-    public func calculateSegmentOffset(_ mainSize: CGSize) -> CGFloat {
+    func calculateSegmentOffset(_ mainSize: CGSize) -> CGFloat {
         segmentWidth(mainSize) * CGFloat(selection)
     }
+    
     
 }
 
 #Preview {
-    SegmentedControl(size: CGSize(width: UIScreen.main.bounds.width - 40, height: 48), segmentLabels: ["One", "Two", "Three"], selection: .constant(0))
+    SegmentedControl(selection: .constant(0), size: CGSize(width: UIScreen.main.bounds.width - 40, height: 48), segmentLabels: ["One", "Two", "Three"], isSelected: "One")
 }

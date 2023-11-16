@@ -16,16 +16,22 @@ struct SegmentLabel: View {
     //variável para determinar a cor do título
     let textColour: Color
     
+    @Binding var isSelected: String
+    
     var body: some View {
-        Text(title)
-            .multilineTextAlignment(.center)
-            .fixedSize(horizontal: false, vertical: false)
-            .foregroundColor(textColour)
-            .frame(width: width)
-            .contentShape(Rectangle())
+        ZStack {
+            Text(title)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: false)
+                .foregroundColor(textColour)
+                .frame(width: width)
+                .contentShape(Rectangle())
+                .fontWeight(isSelected == title ? .bold : .regular)
+        }
+        
     }
 }
 
 #Preview {
-    SegmentLabel(title: "One", width: 100, textColour: .academyBlack)
+    SegmentLabel(title: "One", width: 100, textColour: .academyBlack, isSelected: .constant("One"))
 }
