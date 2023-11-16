@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SegmentedControl: View {
     
+    
+    @Binding public var selection: Int
+    
     // Para calcular o tamanho do Picker
     let size: CGSize
     let segmentLabels: [String]
@@ -24,20 +27,33 @@ struct SegmentedControl: View {
                 .foregroundColor(Color.academyBeige)
                 .opacity(0.2)
             
+            //            BackGround da Label selecionada
+            RoundedRectangle(cornerRadius: 10)
+                .frame(width: segmentWidth(size), height: size.height - 6)
+                .foregroundColor(Color("academyBlue"))
+                .offset(x: calculateSegmentOffset(size))
+                .animation(Animation.easeInOut(duration: 0.2))
             
             //Labels
             HStack(spacing: 0) {
                 ForEach(0..<segmentLabels.count) { index in
-                    SegmentLabel(title: segmentLabels[index], width: segmentWidth(size), textColour: Color.black)
+                    SegmentLabel(title: segmentLabels[index], width: segmentWidth(size), textColour: Color.academyBlack)
+                    // dar um update no selection com o id do segmento da label
+                        .onTapGesture {
+                            selection = index
+                            print("\(index)")
+                        }
                             }
+                
                         }
         }
     }
     
     
-    public init(size: CGSize, segmentLabels: [String]) {
+    public init(size: CGSize, segmentLabels: [String], selection: Binding <Int>) {
         self.size = size
         self.segmentLabels = segmentLabels
+        self._selection = selection
     }
     
 //    Segmenta a width pela quantidade de Labels adicionadas
@@ -49,8 +65,13 @@ struct SegmentedControl: View {
         return width
     }
     
+    // Transporte da Label selecionada para a outra
+    public func calculateSegmentOffset(_ mainSize: CGSize) -> CGFloat {
+        segmentWidth(mainSize) * CGFloat(selection)
+    }
+    
 }
 
 #Preview {
-    SegmentedControl(size: CGSize(width: UIScreen.main.bounds.width - 40, height: 48), segmentLabels: ["One", "Two", "Three"])
+    SegmentedControl(size: CGSize(width: UIScreen.main.bounds.width - 40, height: 48), segmentLabels: ["One", "Two", "Three"], selection: .constant(0))
 }
