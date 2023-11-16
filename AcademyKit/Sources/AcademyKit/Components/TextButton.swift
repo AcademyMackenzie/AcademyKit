@@ -31,11 +31,14 @@ public struct TextButton: View {
                 .font(.custom("Cygre-Bold", size: 18))
                 .bold()
                 .underline(isEnabled)
+        ///Mudança de cor do texto
+        ///
+        ///Esta estrutura de código define a cor do texto a partir de verificações de condições sequenciais, primeiro é verificado se o dispositvo está no dark mode ou no light mode, e depois é verificado se a struct está desabilitada.
                 .foregroundStyle(colorScheme == .dark ? isEnabled ?  Color.academyWhite : Color.academyGray1 : isEnabled ?  Color.academyBlack : Color.academyGray1 )
             
     }
 }
 
 #Preview {
-    TextButton("Cancelar")
+    TextButton("Cancelar").disabled(true)
 }
