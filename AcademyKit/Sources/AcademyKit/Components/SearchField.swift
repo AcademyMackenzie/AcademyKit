@@ -104,6 +104,7 @@ public struct SearchField: View {
 						isClicked = false
 					}
 				})
+				.font(.custom("Cygre-Regular", size: 17))
 					.foregroundStyle(style.foregroundColor)
 				
 				Image(systemName: "mic.fill")
