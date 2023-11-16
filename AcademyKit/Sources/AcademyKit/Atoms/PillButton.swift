@@ -23,7 +23,7 @@ public enum PillButtonEnum {
 /// Estilo de botão em forma de cápsula, que pode ser usado como a label de um Picker
 ///
 /// -   Parameters:
-///      - type: Variação do Pill Button, tipo PillButtonEnum
+///      - type: Variação do Pill Button, tipo PillButtonEnum, altera a cor do botão.
 ///      - isFilled: Altera o preenchimento do botão, tipo booleana, opcional
 ///      - isPicker: Adiciona o chevron para definir o picker, tipo booleana, opcional
 ///
@@ -34,7 +34,12 @@ public enum PillButtonEnum {
 ///}
 ///     .buttonStyle(PillButtonStyle(type: .secondary, isFilled: true, isPicker: true))
 /// ```
-
+///
+/// # Type
+///
+///    - *.primary*: altera o botão para a cor azul;
+///    - *.secondary*: altera o botão para a cor roxa;
+///    - *.tertiary*: altera o botão para a cor preta se for preenchido ou cinza se for vazado.
  public struct PillButtonStyle: ButtonStyle {
     
     @Environment(\.colorScheme) var colorScheme
