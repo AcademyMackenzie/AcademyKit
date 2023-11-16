@@ -7,12 +7,17 @@
 
 import SwiftUI
 
+///View responsável pelo átomo Rating Indicator ``RatingView``
+///
+/// - Parameters:
+///      - rating: Número de estrelas
 public struct RatingView: View {
     
-    @Binding var rating: Int?
+    ///Número de estrelas usado para renderizar as estrelas, podendo elas serem cheias ou vazias
+    @Binding public var rating: Int? //para chamar a Rating View é necessário criar uma variável de State com um tipo de Int opcional em que se passa o estado na variável rating e é possível clicar nas estrelas
 
-    
-    private func starType(index: Int) -> String {
+    ///Função responsável por transformar o número Int por estrelas cheias
+    public func starType(index: Int) -> String {
         
         if let rating = self.rating {
             return index <= rating ? "star.fill" : "star"
@@ -21,6 +26,7 @@ public struct RatingView: View {
         }
     }
     
+    ///Corpo do componente do Rating Indicator
     public var body: some View {
         HStack {
             ForEach(1...5, id: \.self) {
