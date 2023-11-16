@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-///View que mostra um texto de título 1 do nosso pacote
+///View que mostra um texto de título de tamanho 1 do nosso pacote
 public struct Title1View: View {
     
     /// Variável que recebe o texto que deseja mostrar como parâmetro

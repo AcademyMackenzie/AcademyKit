@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Gabriel Vicentin Negro on 16/11/23.
 //
@@ -8,8 +8,8 @@
 import SwiftUI
 
 
-///View que mostra um texto de título de tamanho 2 do nosso pacote
-public struct Title2View: View {
+///View que mostra um texto de título de tamanho 3 do nosso pacote
+public struct Title3View: View {
     
     /// Variável que recebe o texto que deseja mostrar como parâmetro
     public var text: String
@@ -28,11 +28,11 @@ public struct Title2View: View {
     ///  Corpo da View
     public var body: some View {
         Text(text)
-            .font(.custom(weight == .regularWeight ? "Cygre-Regular" : "Cygre-Bold", size: 22))
+            .font(.custom(weight == .regularWeight ? "Cygre-Regular" : "Cygre-Bold", size: 20))
     }
 }
 
 
 #Preview {
-    Title2View(text: "Title2",weight: .boldWeight)
+    Title3View(text: "Title3",weight: .boldWeight)
 }
