@@ -31,9 +31,15 @@ struct SheetContentView <Content: View>: View {
 	var body: some View {
 		NavigationStack {
 			VStack {
+				HStack {
+					Text(title)
+						.font(.custom("Cygre-Regular", size: 28))
+						.bold()
+					Spacer()
+				}
 				insideView
 			}
-			.navigationTitle(title)
+			
 			
 			.toolbar {
 				ToolbarItem(placement: .confirmationAction) {
