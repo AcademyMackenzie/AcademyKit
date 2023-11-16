@@ -17,15 +17,15 @@ public enum weightEnum{
 }
 /// Enum que classifica o tipo do título
 /// - Casos:
-///   - academyLargeTitle: O maior título possível
-///   - academyTitle1: O segundo maior título
-///   - academyTitle2: O terceito maior título
-///   - academyTitle3: O quarto mais título
+///   - largeTitle: O maior título possível
+///   - title1: O segundo maior título
+///   - title2: O terceito maior título
+///   - title3: O quarto mais título
 public enum titleEnum{
-    case academyLargeTitle
-    case academyTitle1
-    case academyTitle2
-    case academyTitle3
+    case largeTitle
+    case title1
+    case title2
+    case title3
 }
 
 ///View que mostra um texto de título grande do nosso pacote
@@ -52,10 +52,10 @@ public struct TitleView: View {
     ///  Corpo da View
     public var body: some View {
         Text(text)
-            .font(.custom(weight == .regularWeight ? "Cygre-Regular" : "Cygre-Bold", size: title == .academyLargeTitle ? 34 : title == .academyTitle1 ? 28 : title == .academyTitle2 ? 22 : 30 ))
+            .font(.custom(weight == .regularWeight ? "Cygre-Regular" : "Cygre-Bold", size: title == .largeTitle ? 34 : title == .title1 ? 28 : title == .title2 ? 22 : 30 ))
     }
 }
 
 #Preview {
-    TitleView(text: "LargeTitle", weight: .regularWeight, title: .academyTitle1)
+    TitleView(text: "LargeTitle", weight: .regularWeight, title: .largeTitle)
 }
