@@ -38,6 +38,14 @@ public struct RatingView: View {
                         self.rating = index
                     }
                     .accessibilityLabel(rating == nil ? "estrela \(index), 0 de 5 estrelas" : "estrela \(index), \(rating!) de 5 estrelas")
+                    .gesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { value in
+                                let starWidth = UIScreen.main.bounds.width / 10
+                                let rating = min(max(1, (value.location.x + starWidth / 2) / starWidth), 5)
+                                self.rating = Int(rating)
+                            }
+                    )
             }
         }
 
