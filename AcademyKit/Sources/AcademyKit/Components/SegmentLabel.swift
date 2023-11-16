@@ -7,12 +7,25 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct SegmentLabel: View {
+    
+    //variável para determinar o título
+    let title: String
+    //variável para determinar o tamanho da label
+    let width: CGFloat
+    //variável para determinar a cor do título
+    let textColour: Color
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(title)
+            .multilineTextAlignment(.center)
+            .fixedSize(horizontal: false, vertical: false)
+            .foregroundColor(textColour)
+            .frame(width: width)
+            .contentShape(Rectangle())
     }
 }
 
 #Preview {
-    SwiftUIView()
+    SegmentLabel(title: "One", width: 100, textColour: .academyBlack)
 }
