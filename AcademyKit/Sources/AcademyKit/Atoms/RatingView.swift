@@ -10,6 +10,7 @@ import SwiftUI
 public struct RatingView: View {
     
     @Binding var rating: Int?
+
     
     private func starType(index: Int) -> String {
         
@@ -26,12 +27,14 @@ public struct RatingView: View {
                 index in
                 Image(systemName: self.starType(index: index))
                     .foregroundStyle(Color.academyPurple)
+                    .accessibilityRemoveTraits(.isImage)
                     .onTapGesture {
                         self.rating = index
                     }
+                    .accessibilityLabel(rating == nil ? "estrela \(index), 0 de 5 estrelas" : "estrela \(index), \(rating!) de 5 estrelas")
             }
         }
-        .accessibilityLabel("\(rating!) de 5 estrelas")
+
     }
 }
 
