@@ -15,12 +15,20 @@ Nomes das fontes para adicionar no código:
 - Cygre-RegularIt
 - Cygre-ExtraBold 
 - Cygre-ExtraBoldIt
-- Cygre-Light,Cygre-Medium 
+- Cygre-Light
+- Cygre-Medium 
 - Cygre-MediumIt
 - Cygre-SemiBold
 - Cygre-SemiBoldIt 
 - Cygre-Thin 
 - Cygre-ThinIt
+- Cygre-Bold
+- Cygre-BoldIt
+- Cygre-Black
+- Cygre-BlackIt
+- Cygre-Bold
+- Cygre-Book
+- Cygre-BookIt
 
 ## Cores
 
@@ -43,7 +51,7 @@ Nome das cores disponíveis:
 - academyDarkBeige
 - academyBlack
 - academyGray1
-- academyGray2
+- academyGra2
 - academyGray3
 - academyGray4
 - academyWhite
