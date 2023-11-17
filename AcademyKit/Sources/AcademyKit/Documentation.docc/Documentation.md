@@ -9,9 +9,6 @@ Biblioteca de componentes da Academy.
         alt: "ícone do AcademyKit")
     @PageColor(red)
 }
-=======
-# Academy Kit
-
 
 ## Overview
 
@@ -26,38 +23,34 @@ Os componentes foram criados para funcionar em aplicativos de iOS, utilizando o 
 Esses são os componentes disponíveis no AcademyKit
 
 ### Tipografia
-Title
+``TitleView``
 
-Headline
+``Headline``
 
-Body
+``BodyView``
 
-Botton
+``BottonView``
 ### Botões 
 
-<!---->aqui precisa ainda colocar os links!!!!
+``RectangleButtonFill``
 
-Rectangle button
+``RectangleButtonNoFill``
 
-Pill button
+``PillButtonStyle``
 
-text button
+``TextButton``
 
 ### Inputs e Seleção
-Segmented controls
+``SegmentedControl``
 
 ### Apresentação
-Sheet
+``SheetView``
 
 ### Status
-Rating indicator
+``RatingView``
 
 ### Navegação e pesquisa
-Tab Bar
+``TabBarLabel``
 
-Search Field
-=======
-### 
-
-- 
+``SearchField``
 
