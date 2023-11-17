@@ -7,17 +7,46 @@
 
 import SwiftUI
 
+/// View Builder que posiciona Views em formato de Carrossel Horizontal.
+///
+/// Para usar o CarouselView é só chamá-lo como uma View e dentro das chaves ({}) colocar as views que você deseja colocar no carrossel.
+///
+/// ```swift
+/// struct ContentView(){
+///   var body: some View {
+///   CarouselView(){
+///    SuaView()
+///    SuaView()
+///    SuaView()
+///   }
+///  }
+///}
+///
+/// ```
+///# **Aviso**
+///Não é possível usar ForEach ou algum tipo de loop para popular esse carrossel, é necessário chamar cada View a ser utilizadas
+///
+///  - Parameters:
+///     - currentIndex: Armazena a posição atual do card que está sendo mostrado.
+///     - views: Vetor de Views que será usado para serem organizados em um Carrossel Horizontal.
 struct CarouselView: View {
+    
+    /// Armazena a posição atual do card que está sendo mostrado e altera os componentes a sua volta dependendo da sua posição.
     @State private var currentIndex: Int = 0
     
+    /// Vetor de Views que será usado para serem organizados em um Carrossel Horizontal.
     var views: [AnyView]
     
-    init<Views>(currentIndex: Int, @ViewBuilder content: @escaping () -> TupleView<Views>) {
-        self.currentIndex = currentIndex
+    /// Inicializador 
+    /// - Parameters:
+    ///   - content: Conteúdo genérico para a criação da View
+    init<Views>(@ViewBuilder content: @escaping () -> TupleView<Views>) {
         views = content().getViews
     }
     
     
+    /// Corpo que gera a organização em forma de Carrossel Horizontal, utilizando o .gesture do _DragGesture()_ .
+    //
     var body: some View {
         GeometryReader { geometry in
             ZStack() {
