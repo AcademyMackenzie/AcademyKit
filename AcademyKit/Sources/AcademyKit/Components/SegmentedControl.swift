@@ -10,14 +10,15 @@ import SwiftUI
 
 /// View que representa a costumização de um Picker do tipo SegmentedControl com a identidade visual do AcademyKit
 ///
+/// Cria uma variável de Estado para alternar entre as labels disponíveis no SegmentedControl, que serão selecionadas pelo usuário.
 /// ```swift
 /// @State var segmentSelection: Int = 0
 ///
 ///var body: some View {
 ///         VStack {
-///                 CustomSegmentControl(selection: $segmentSelection, size: CGSize(width: 350, height: 48), segmentLabels: ["One", "Two", "Three"], isSelected: "One")
-///                            }
-///            }
+///                 SegmentedControl(selection: $segmentSelection, size: CGSize(width: 350, height: 48), segmentLabels: ["One", "Two", "Three"], isSelected: "One")
+///                }
+///}
 ///
 /// ```
 struct SegmentedControl: View {
