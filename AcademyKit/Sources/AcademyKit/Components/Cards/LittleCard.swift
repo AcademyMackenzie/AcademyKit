@@ -8,16 +8,28 @@
 import SwiftUI
 
 /// Componente informativo que contém Imagem e texto.
-public struct MediumCard: View {
+public struct LittleCard: View {
+    ///Esta variável contém informações sobre o modo claro e o modo escuro do dispositivo
+    @Environment(\.colorScheme) var colorScheme
+    
     
     /// Variável responsável pelo título do card
-    @State var cardTitle: String
+    var cardTitle: String
     /// Variável responsável pelo descrição do card
-    @State var cardDesc: String
+    var cardDesc: String
     /// Variável responsável pelo nome da imagem a ser inserida no card
-    @State var cardImage: String
+    var cardImage: String
     /// Variável responsável pela descrição da imagem inserida no card
-    @State var cardDescImage: String
+    var cardDescImage: String
+    
+    
+    
+    public init(cardTitle: String, cardDesc: String, cardImage: String, cardDescImage: String) {
+        self.cardTitle = cardTitle
+        self.cardDesc = cardDesc
+        self.cardImage = cardImage
+        self.cardDescImage = cardDescImage
+    }
     
     public  var body: some View {
         VStack(alignment: .leading) {
@@ -29,16 +41,14 @@ public struct MediumCard: View {
                 .accessibilityLabel("\(cardDescImage)")
             
             VStack(alignment: .leading) {
-                Text("\(cardTitle)")
-                    .font(.title)
-                    .bold()
-                    .foregroundStyle(Color("academyWhite"))
+                TitleView(text: cardTitle, weight: .boldWeight, title: .title1)
+                    .foregroundStyle(Color.academyAccentDarkMode)
+                    .colorInvert()
                     .lineLimit(1)
                     .padding(.vertical, 2)
-                
-                Text("\(cardDesc)")
-                    .font(.body)
-                    .foregroundStyle(Color("academyWhite"))
+                BodyView(text: cardDesc, weight: .regularWeight, italic: false, bodyType: .body)
+                    .foregroundStyle(Color.academyAccentDarkMode)
+                    .colorInvert()
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                     .padding(.bottom, 10)
@@ -47,11 +57,11 @@ public struct MediumCard: View {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 20)
-        .background(Color("academyAssetDarkMode"))
+        .background(colorScheme == .light ? Color.academyAccentDarkMode : Color.academyWhite)
         .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }
 
 #Preview {
-    MediumCard(cardTitle: "Heading", cardDesc: "This is a short description about \nthe card", cardImage: "Image", cardDescImage: "Desc da Image")
+    LittleCard(cardTitle: "Heading", cardDesc: "This is a short description about \nthe card", cardImage: "Image", cardDescImage: "Desc da Image")
 }
