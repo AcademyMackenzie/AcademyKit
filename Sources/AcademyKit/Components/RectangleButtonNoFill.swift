@@ -22,6 +22,12 @@ public struct RectangleButtonNoFill: ButtonStyle {
     ///Enum declarado no ``RectangleButtonEnum``, serve para trocar a cor do botão.
     public var buttonType: RectangleButtonEnum
     
+    public init(hasIcon: Bool, isRectangleButtonDisabled: Bool, buttonType: RectangleButtonEnum) {
+        self.hasIcon = hasIcon
+        self.isRectangleButtonDisabled = isRectangleButtonDisabled
+        self.buttonType = buttonType
+    }
+    
     /// Essa função cria o corpo para esse ButtonStyle.
     /// - Parameter configuration: Representa o Botão que será alterado.
     /// - Returns: O tipo ButtonStyle sempre retorna o estilo que foi criado.
@@ -56,6 +62,7 @@ public struct RectangleButtonNoFill: ButtonStyle {
     ZStack{
         
         Color.black
+            .ignoresSafeArea()
         
         Button("Secondary"){
             

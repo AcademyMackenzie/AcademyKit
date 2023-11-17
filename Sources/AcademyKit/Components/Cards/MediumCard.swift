@@ -1,6 +1,5 @@
-
 //
-//  MediumCard.swift
+//  LittleCard.swift
 //  card
 //
 //  Created by Jennifer Pires and Laura Santos on 14/11/23.
@@ -13,6 +12,7 @@ public struct MediumCard: View {
     ///Esta variável contém informações sobre o modo claro e o modo escuro do dispositivo
     @Environment(\.colorScheme) var colorScheme
     
+    
     /// Variável responsável pelo título do card
     var cardTitle: String
     /// Variável responsável pelo descrição do card
@@ -21,6 +21,8 @@ public struct MediumCard: View {
     var cardImage: String
     /// Variável responsável pela descrição da imagem inserida no card
     var cardDescImage: String
+    
+    
     
     public init(cardTitle: String, cardDesc: String, cardImage: String, cardDescImage: String) {
         self.cardTitle = cardTitle
@@ -31,6 +33,13 @@ public struct MediumCard: View {
     
     public  var body: some View {
         VStack(alignment: .leading) {
+            Image("\(cardImage)")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 310, height: 190)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .accessibilityLabel("\(cardDescImage)")
+            
             VStack(alignment: .leading) {
                 TitleView(text: cardTitle, weight: .boldWeight, title: .title1)
                     .foregroundStyle(Color.academyAccentDarkMode)

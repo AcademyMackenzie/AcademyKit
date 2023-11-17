@@ -43,6 +43,20 @@ public struct SegmentedControl: View {
     @Environment(\.colorScheme) public var colorScheme: ColorScheme
     
     
+    /// Inicializador que cria um Picker do estilo Segmented Control customizado com a identidade visual do AcademyKit
+    /// - Parameters:
+    ///   - selection: Label que está selecionada pelo usuário.
+    ///   - size: Tamanho do picker.
+    ///   - segmentLabels: Lista com todas as labels que estarão no picker.
+    ///   - predeterminedSelected: Determina qual label estará pré-selecionada.
+    public init(selection: Binding <Int>, size: CGSize, segmentLabels: [String], predeterminedSelected: String) {
+        self._selection = selection
+        self.size = size
+        self.segmentLabels = segmentLabels
+        self.predeterminedSelected = predeterminedSelected
+    }
+    
+    
     /// Corpo da View que contém o componente completo do SegmentedControl
     public var body: some View {
         ZStack(alignment: .leading) {
@@ -90,21 +104,6 @@ public struct SegmentedControl: View {
         }
         
     }
-    
-    
-    /// Inicializador que cria um Picker do estilo Segmented Control customizado com a identidade visual do AcademyKit
-    /// - Parameters:
-    ///   - selection: Label que está selecionada pelo usuário.
-    ///   - size: Tamanho do picker.
-    ///   - segmentLabels: Lista com todas as labels que estarão no picker.
-    ///   - predeterminedSelected: Determina qual label estará pré-selecionada.
-    public init(selection: Binding <Int>, size: CGSize, segmentLabels: [String], predeterminedSelected: String) {
-        self._selection = selection
-        self.size = size
-        self.segmentLabels = segmentLabels
-        self.predeterminedSelected = predeterminedSelected
-    }
-    
     
     /// Função que faz a segmentação da largura de uma label de acordo com a quantidade de labels que constituem o picker.
     /// - Parameter mainSize: Parâmetro que determina a largura de uma label.
