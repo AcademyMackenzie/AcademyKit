@@ -43,6 +43,7 @@ public enum PillButtonEnum {
  public struct PillButtonStyle: ButtonStyle {
     
     @Environment(\.colorScheme) var colorScheme
+     
     public var type: PillButtonEnum
     public var isFilled: Bool
     public var isPicker: Bool? = false
@@ -57,6 +58,11 @@ public enum PillButtonEnum {
         }
     }
     
+     public init(type: PillButtonEnum, isFilled: Bool, isPicker: Bool? = nil) {
+         self.type = type
+         self.isFilled = isFilled
+         self.isPicker = isPicker
+     }
     
      
     public func makeBody(configuration: Configuration) -> some View {
