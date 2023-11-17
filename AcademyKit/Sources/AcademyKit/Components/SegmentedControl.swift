@@ -21,7 +21,7 @@ import SwiftUI
 ///}
 ///
 /// ```
-struct SegmentedControl: View {
+public struct SegmentedControl: View {
     
     /// Variável que determina a label que está selecionada pelo usuário.
     @Binding public var selection: Int
@@ -30,21 +30,21 @@ struct SegmentedControl: View {
     public var predeterminedSelected: String
     
     /// Variável que determina o estado de seleção da label.
-    @State var isSelected: String = ""
+    @State public var isSelected: String = ""
     
     /// Variável que serve para determinar o tamanho do Picker
-    let size: CGSize
+    public let size: CGSize
     
     /// Variável que armazena uma lista de Strings com todas as Labels que estarão no picker.
-    let segmentLabels: [String]
+    public let segmentLabels: [String]
     
     
     /// Variável para definir cor de acordo com o modo das telas.
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @Environment(\.colorScheme) public var colorScheme: ColorScheme
     
     
     /// Corpo da View que contém o componente completo do SegmentedControl
-    var body: some View {
+    public var body: some View {
         ZStack(alignment: .leading) {
             
             //BackGround do SegmentedControl
@@ -65,7 +65,7 @@ struct SegmentedControl: View {
             HStack(spacing: 0) {
                 // ForEach que passa por toda a lista das labels e cria o picker com essas labels de acordo com a quantidade para se adequar ao tamanho
                 ForEach(0..<segmentLabels.count) { index in
-                    SegmentLabel(title: segmentLabels[index], width: segmentWidth(size), textColour: colorScheme == .light ? Color.academyBlack : Color.academyWhite, isSelected: $isSelected)
+                    SegmentLabel(title: segmentLabels[index], width: segmentWidth(size), textColor: colorScheme == .light ? Color.academyBlack : Color.academyWhite, isSelected: $isSelected)
                     // dar um update no selection com o id do segmento da label
                         .onTapGesture {
                             selection = index
@@ -92,7 +92,7 @@ struct SegmentedControl: View {
     }
     
     
-    /// Criar um Picker do estilo Segmented Control customizado com a identidade visual do AcademyKit
+    /// Inicializador que cria um Picker do estilo Segmented Control customizado com a identidade visual do AcademyKit
     /// - Parameters:
     ///   - selection: Label que está selecionada pelo usuário.
     ///   - size: Tamanho do picker.
@@ -109,7 +109,7 @@ struct SegmentedControl: View {
     /// Função que faz a segmentação da largura de uma label de acordo com a quantidade de labels que constituem o picker.
     /// - Parameter mainSize: Parâmetro que determina a largura de uma label.
     /// - Returns: Retorna o valor da largura do picker com todas as labels.
-    func segmentWidth(_ mainSize: CGSize) -> CGFloat {
+    public func segmentWidth(_ mainSize: CGSize) -> CGFloat {
         var width = (mainSize.width / CGFloat(segmentLabels.count))
         if width < 0 {
             width = 0
@@ -120,7 +120,7 @@ struct SegmentedControl: View {
     // Transporte da Label selecionada para a outra
     /// Função que faz o transporte de uma label para outra.
     /// - Parameter mainSize: Parâmetro que determina a largura de uma label.
-    func calculateSegmentOffset(_ mainSize: CGSize) -> CGFloat {
+    public func calculateSegmentOffset(_ mainSize: CGSize) -> CGFloat {
         segmentWidth(mainSize) * CGFloat(selection)
     }
     

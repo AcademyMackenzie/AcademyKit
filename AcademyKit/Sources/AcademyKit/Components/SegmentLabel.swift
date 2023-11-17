@@ -8,29 +8,29 @@
 import SwiftUI
 
 /// View que representa a customização de uma Label
-struct SegmentLabel: View {
+public struct SegmentLabel: View {
     
     
     /// Variável que determina o título de uma Label
-    let title: String
+    public let title: String
     
     /// Variável que determina o tamanho de uma Label
-    let width: CGFloat
+    public let width: CGFloat
     
     /// Variável que determina a cor do título da label
-    let textColour: Color
+    public let textColor: Color
     
     
     ///Variável que recebe o estado de seleção da label.
-    @Binding var isSelected: String
+    @Binding public var isSelected: String
     
     /// Corpo da View que contém o componente do texto da Label
-    var body: some View {
+    public var body: some View {
         ZStack {
             Text(title)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: false)
-                .foregroundColor(textColour)
+                .foregroundColor(textColor)
                 .frame(width: width)
                 .contentShape(Rectangle())
                 .font(.custom(isSelected == title ? "Cygre-Regular" : "Cygre-Bold", size: 13))
@@ -38,8 +38,21 @@ struct SegmentLabel: View {
         }
         
     }
+    
+    /// Inicializador que cria a Label do SegmentedControl
+    /// - Parameters:
+    ///   - title: Variável que determina o título de uma Label
+    ///   - width: Variável que determina o tamanho de uma Label
+    ///   - textColor: Variável que determina a cor do título da label
+    ///   - isSelected: Variável que recebe o estado de seleção da label.
+    public init(title: String, width: CGFloat, textColor: Color, isSelected: Binding<String>) {
+        self.title = title
+        self.width = width
+        self.textColor = textColor
+        self._isSelected = isSelected
+    }
 }
 
 #Preview {
-    SegmentLabel(title: "One", width: 100, textColour: .academyBlack, isSelected: .constant("One"))
+    SegmentLabel(title: "One", width: 100, textColor: .academyBlack, isSelected: .constant("One"))
 }
