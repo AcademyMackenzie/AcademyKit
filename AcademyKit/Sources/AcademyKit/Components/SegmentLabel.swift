@@ -7,17 +7,24 @@
 
 import SwiftUI
 
+/// View que representa a customização de uma Label
 struct SegmentLabel: View {
     
-    //variável para determinar o título
+    
+    /// Variável que determina o título de uma Label
     let title: String
-    //variável para determinar o tamanho da label
+    
+    /// Variável que determina o tamanho de uma Label
     let width: CGFloat
-    //variável para determinar a cor do título
+    
+    /// Variável que determina a cor do título da label
     let textColour: Color
     
+    
+    ///Variável que recebe o estado de seleção da label.
     @Binding var isSelected: String
     
+    /// Corpo da View que contém o componente do texto da Label
     var body: some View {
         ZStack {
             Text(title)
@@ -27,7 +34,7 @@ struct SegmentLabel: View {
                 .frame(width: width)
                 .contentShape(Rectangle())
                 .font(.custom(isSelected == title ? "Cygre-Regular" : "Cygre-Bold", size: 13))
-                .accessibilityLabel("opção" + title + "selecionado.")
+                .accessibilityLabel("opção" + title + "selecionada.")
         }
         
     }
