@@ -13,7 +13,7 @@ import SwiftUI
 ///     - hasIcon: Booleano para indicar se o botão vai ter um ícone ou não.
 ///     - isRectangleDisabled: Booleano para indicar se o botão está ativo ou não.
 ///     - buttonType: Enum declarado no ``RectangleButtonEnum``, serve para trocar a cor do botão.
-struct RectangleButtonFill: ButtonStyle {
+public struct RectangleButtonFill: ButtonStyle {
     
     ///Booleano para indicar se o botão vai ter um ícone ou não.
     public var hasIcon: Bool

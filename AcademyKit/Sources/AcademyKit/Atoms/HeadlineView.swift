@@ -9,7 +9,7 @@ import SwiftUI
 
 
 ///View que mostra um texto de headline do nosso pacote
-public struct Headline: View {
+public struct HeadlineView: View {
     
     /// Variável que recebe o texto que deseja mostrar como parâmetro
     public var text: String
@@ -34,5 +34,5 @@ public struct Headline: View {
 
 
 #Preview {
-    Headline(text: "Headline",italic: false)
+    HeadlineView(text: "Headline",italic: false)
 }

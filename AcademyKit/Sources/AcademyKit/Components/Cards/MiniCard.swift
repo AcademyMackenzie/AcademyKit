@@ -39,7 +39,7 @@ public struct MiniCard: View {
                 .accessibilityLabel("\(cardDescImage)")
             
             VStack(alignment: .leading) {
-                Headline(text: cardTitle, italic: false)
+                HeadlineView(text: cardTitle, italic: false)
                     .accessibilityLabel("\(cardTitle)")
                     .foregroundStyle(Color.academyAccentDarkMode)
                     .colorInvert()
