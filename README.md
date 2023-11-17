@@ -1,58 +1,12 @@
 # Academy Kit
 
-## Fontes
+## Overview
 
-Para utilizar as fontes, o comando realizado deve ser:
-```swift
+O AcademyKit é uma biblioteca de componentes que implementa a identidade visual da nossa Academy, buscando servir de base para futuros aplicativos. 
 
-    .font(.custom("nome_da_fonte", size: tamanho_da_fonte)
-```
-Porém, para utilizar a fonte em seu App, sera necessário baixá-la e adicionar em seu projeto!
-Link para download: `https://fontesk.com/cygre-typeface/`
-Nomes das fontes para adicionar no código:
+A Identidade Visual possui diversas inspirações da estrutura física e dos participantes da Apple Developer Academy | Mackenzie. A escolha de cores foi baseada na paleta utilizada nas paredes e nas hives presentes nos painéis. As cores em degradê significam que elas se misturam entre si, mas ao mesmo tempo é possível visualizar a cor de cada uma. Essa alegoria representa os participantes da Academy, que, com a personalidade de cada Junior Learner torna a Academy única.
 
-- Cygre-Regular
-- Cygre-RegularIt
-- Cygre-ExtraBold 
-- Cygre-ExtraBoldIt
-- Cygre-Light
-- Cygre-Medium 
-- Cygre-MediumIt
-- Cygre-SemiBold
-- Cygre-SemiBoldIt 
-- Cygre-Thin 
-- Cygre-ThinIt
-- Cygre-Bold
-- Cygre-BoldIt
-- Cygre-Black
-- Cygre-BlackIt
-- Cygre-Bold
-- Cygre-Book
-- Cygre-BookIt
 
-## Cores
+Os componentes foram criados para funcionar em aplicativos de iOS, utilizando o SwiftUI.
 
-Para utilizar as cores, o comando realizado deve ser:
-```swift
-
-    .foregroundStyle(Color.nome_da_cor)
-    //Ou
-    .foregroundColor(Color.nome_da_cor)
-```
-Nome das cores disponíveis: 
-
-- academyBlue
-- academyRed
-- academyPurple
-- academyBeige
-- academyDarkBlue
-- academyDarkRed
-- academyDarkPurple
-- academyDarkBeige
-- academyBlack
-- academyGray1
-- academyGra2
-- academyGray3
-- academyGray4
-- academyWhite
-- academyAccentDarkMode
+Para mais informações de componentes e como utilizar no seu aplicativo, acesse o DocC do pacote.
