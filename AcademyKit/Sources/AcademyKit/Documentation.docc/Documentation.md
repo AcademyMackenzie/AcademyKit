@@ -25,7 +25,7 @@ Esses são os componentes disponíveis no AcademyKit
 ### Tipografia
 ``TitleView``
 
-``Headline``
+``HeadlineView``
 
 ``BodyView``
 
