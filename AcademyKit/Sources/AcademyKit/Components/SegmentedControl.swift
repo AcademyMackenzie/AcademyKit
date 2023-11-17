@@ -94,10 +94,10 @@ struct SegmentedControl: View {
     
     /// Criar um Picker do estilo Segmented Control customizado com a identidade visual do AcademyKit
     /// - Parameters:
-    ///   - selection: label que está selecionada pelo usuário.
-    ///   - size: tamanho do picker.
-    ///   - segmentLabels: lista com todas as labels que estarão no picker.
-    ///   - predeterminedSelected: determina qual label estará pré-selecionada.
+    ///   - selection: Label que está selecionada pelo usuário.
+    ///   - size: Tamanho do picker.
+    ///   - segmentLabels: Lista com todas as labels que estarão no picker.
+    ///   - predeterminedSelected: Determina qual label estará pré-selecionada.
     public init(selection: Binding <Int>, size: CGSize, segmentLabels: [String], predeterminedSelected: String) {
         self._selection = selection
         self.size = size
