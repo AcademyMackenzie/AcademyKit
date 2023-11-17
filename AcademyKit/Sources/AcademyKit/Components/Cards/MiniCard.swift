@@ -9,14 +9,24 @@ import SwiftUI
 
 /// Componente informativo que abre um menu.
 public struct MiniCard: View {
+    ///Esta variável contém informações sobre o modo claro e o modo escuro do dispositivo
+    @Environment(\.colorScheme) var colorScheme
+    
     /// Variável responsável pelo título do card
-    @State var cardTitle: String
+    var cardTitle: String
     /// Variável responsável pelo descrição do card
-    @State var cardDesc: String
+    var cardDesc: String
     /// Variável responsável pelo nome da imagem a ser inserida no card
-    @State var cardImage: String
+    var cardImage: String
     /// Variável responsável pela descrição da imagem inserida no card
-    @State var cardDescImage: String
+     var cardDescImage: String
+    
+    public init(cardTitle: String, cardDesc: String, cardImage: String, cardDescImage: String) {
+        self.cardTitle = cardTitle
+        self.cardDesc = cardDesc
+        self.cardImage = cardImage
+        self.cardDescImage = cardDescImage
+    }
     
     public var body: some View {
         HStack(alignment:.center){
@@ -29,18 +39,18 @@ public struct MiniCard: View {
                 .accessibilityLabel("\(cardDescImage)")
             
             VStack(alignment: .leading) {
-                Text("\(cardTitle)")
+                Headline(text: cardTitle, italic: false)
                     .accessibilityLabel("\(cardTitle)")
-                    .font(.headline)
-                    .bold()
-                    .foregroundStyle(Color("academyWhite"))
+                    .foregroundStyle(Color.academyAccentDarkMode)
+                    .colorInvert()
                     .lineLimit(1)
                     .padding(.vertical, 2)
                 
-                Text("\(cardDesc)")
+                BodyView(text: cardDesc, weight: .regularWeight, italic: false, bodyType: .subheadline)
                     .accessibilityLabel("\(cardDesc)")
                     .font(.subheadline)
-                    .foregroundStyle(Color("academyWhite"))
+                    .foregroundStyle(Color.academyAccentDarkMode)
+                    .colorInvert()
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
             }
@@ -57,7 +67,7 @@ public struct MiniCard: View {
         }
         .padding(.vertical, 13)
         .padding(.horizontal, 13)
-        .background(Color("academyAssetDarkMode"))
+        .background(colorScheme == .light ? Color.academyAccentDarkMode : Color.academyWhite)
         .clipShape(RoundedRectangle(cornerRadius: 8))
         
     }

@@ -26,6 +26,10 @@ public struct RatingView: View {
         }
     }
     
+    public init(rating: Binding<Int?>) {
+        self._rating = rating
+    }
+    
     ///Corpo do componente do Rating Indicator
     public var body: some View {
         HStack {
@@ -53,5 +57,5 @@ public struct RatingView: View {
 }
 
 #Preview {
-    RatingView(rating: .constant(4))
+    RatingView(rating: .constant(3))
 }
