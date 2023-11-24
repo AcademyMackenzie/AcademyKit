@@ -7,10 +7,20 @@
 
 import SwiftUI
 
+/// Uma caixa de seleção para valores booleanos
+///
+///     -Parameters:
+///         - text: String que será exibida ao lado da caixa de seleção
+///         - isChecked: Booleano de retorno para verificação
 struct CheckBox: View {
     @State var text: String
     @State var isChecked: Bool
     
+    /// Inicializador dos termos
+    ///
+    ///  - Parameters:
+    ///     - text: inicializa ___text___
+    ///     - isChecked: inicializa ___isChecked___
     init(_ text: String, isChecked: Bool) {
         self.text = text
         self.isChecked = isChecked
