@@ -51,7 +51,7 @@ public struct RectangleButtonNoFill: ButtonStyle {
         
         .overlay(
             RoundedRectangle(cornerRadius: 8)
-                .stroke(isRectangleButtonDisabled ? Color.academyGra2 : buttonType == .primary ? (configuration.isPressed ? Color.academyDarkBlue : Color.academyBlue)  : (configuration.isPressed ? Color.academyDarkPurple : Color.academyPurple), lineWidth: 1)
+                .stroke(isRectangleButtonDisabled ? Color.academyGray2 : buttonType == .primary ? (configuration.isPressed ? Color.academyDarkBlue : Color.academyBlue)  : (configuration.isPressed ? Color.academyDarkPurple : Color.academyPurple), lineWidth: 1)
         )
     
        

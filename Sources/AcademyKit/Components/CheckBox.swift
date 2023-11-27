@@ -12,9 +12,9 @@ import SwiftUI
 ///     -Parameters:
 ///         - text: String que será exibida ao lado da caixa de seleção
 ///         - isChecked: Booleano de retorno para verificação
-struct CheckBox: View {
-    @State var text: String
-    @State var isChecked: Bool
+public struct CheckBox: View {
+    @State public var text: String
+    @State public var isChecked: Bool
     
     /// Inicializador dos termos
     ///
@@ -26,7 +26,7 @@ struct CheckBox: View {
         self.isChecked = isChecked
     }
     
-    var body: some View {
+    public var body: some View {
         HStack {
             RoundedRectangle(cornerRadius: 2)
                 .frame(width: 19, height: 19)

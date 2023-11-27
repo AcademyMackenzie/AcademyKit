@@ -29,7 +29,7 @@ public struct CustomToggleStyle: ToggleStyle {
             configuration.label
             Spacer()
             Capsule()
-                .fill(configuration.isOn ? LinearGradient(colors: colorScheme == .light ? [Color.academyBlue, Color.academyPurple] : [Color.academyDarkBlue, Color.academyDarkPurple], startPoint: .leading, endPoint: .trailing) : LinearGradient(colors: [.academyGra2, .academyGra2], startPoint: .leading, endPoint: .trailing))
+                .fill(configuration.isOn ? LinearGradient(colors: colorScheme == .light ? [Color.academyBlue, Color.academyPurple] : [Color.academyDarkBlue, Color.academyDarkPurple], startPoint: .leading, endPoint: .trailing) : LinearGradient(colors: [.academyGray2, .academyGray2], startPoint: .leading, endPoint: .trailing))
                 .frame(width: 51, height: 31, alignment: .center)
                 .overlay(
                     Group {

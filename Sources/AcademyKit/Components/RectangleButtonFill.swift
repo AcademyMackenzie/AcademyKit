@@ -49,7 +49,7 @@ public struct RectangleButtonFill: ButtonStyle {
         .padding(.vertical, hasIcon ? 16 : 16)
         .padding(.horizontal, hasIcon ? 29 : 40)
         
-        .background(isRectangleButtonDisabled ? Color.academyGra2 : buttonType == .primary ? (configuration.isPressed ? Color.academyDarkBlue : Color.academyBlue)  : (configuration.isPressed ? Color.academyDarkPurple : Color.academyPurple))
+        .background(isRectangleButtonDisabled ? Color.academyGray2 : buttonType == .primary ? (configuration.isPressed ? Color.academyDarkBlue : Color.academyBlue)  : (configuration.isPressed ? Color.academyDarkPurple : Color.academyPurple))
         .clipShape(RoundedRectangle(cornerRadius: 8))
        
     }
