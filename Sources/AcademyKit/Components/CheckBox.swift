@@ -21,7 +21,7 @@ public struct CheckBox: View {
     ///  - Parameters:
     ///     - text: inicializa ___text___
     ///     - isChecked: inicializa ___isChecked___
-    init(_ text: String, isChecked: Bool) {
+    public init(_ text: String, isChecked: Bool) {
         self.text = text
         self.isChecked = isChecked
     }
