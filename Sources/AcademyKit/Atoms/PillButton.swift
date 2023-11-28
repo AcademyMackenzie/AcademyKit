@@ -54,7 +54,7 @@ public enum PillButtonEnum {
         case .secondary:
             return .academyPurple
         case .tertiary:
-            return isFilled ? .academyAccentDarkMode : .academyGra2
+            return isFilled ? .academyAccentDarkMode : .academyGray2
         }
     }
     

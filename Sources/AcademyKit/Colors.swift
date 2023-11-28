@@ -20,7 +20,7 @@ extension Color{
     public static let academyDarkBeige: Color =  Color(red:121/255,green:123/255,blue:122/255)
     public static let academyBlack: Color =  Color(.black)
     public static let academyGray1: Color =  Color(red:109/255,green:109/255,blue:115/255)
-    public static let academyGra2: Color =  Color(red:142/255,green:142/255,blue:147/255)
+    public static let academyGray2: Color =  Color(red:142/255,green:142/255,blue:147/255)
     public static let academyGray3: Color =  Color(red:174/255,green:174/255,blue:178/255)
     public static let academyGray4: Color =  Color(red:199/255,green:199/255,blue:204/255)
     public static let academyWhite: Color =  Color(.white)
